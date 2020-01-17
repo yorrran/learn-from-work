@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { switchMap, filter, takeUntil } from "rxjs/operators";
 import { interval, Subscription, BehaviorSubject } from "rxjs";
 import { HttpClientService } from "src/services/http-client.service";
@@ -9,7 +9,7 @@ import { HttpClientService } from "src/services/http-client.service";
   styleUrls: ["./polling.component.scss"],
   providers: [HttpClientService]
 })
-export class PollingComponent implements OnInit {
+export class PollingComponent implements OnInit, OnDestroy {
   pollingSubscription: Subscription | undefined;
   completed$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
@@ -28,5 +28,10 @@ export class PollingComponent implements OnInit {
         const currCompleted = this.completed$.value;
         this.completed$.next(currCompleted + 1);
       });
+  }
+
+  ngOnDestroy() {
+    this.pollingSubscription.unsubscribe();
+    this.completed$.next(0);
   }
 }
