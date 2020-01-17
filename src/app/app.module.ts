@@ -1,14 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { PollingComponent } from '../components/polling/polling.component';
-import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { PollingComponent } from "../components/polling/polling.component";
+import { HttpClientModule } from "@angular/common/http";
+import { DebounceObservableComponent } from "src/components/debounce-observable/debounce-observable.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [AppComponent, PollingComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, PollingComponent, DebounceObservableComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
