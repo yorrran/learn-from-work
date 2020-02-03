@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  OnDestroy
+} from '@angular/core';
 import { fromEvent, of, Subscription } from 'rxjs';
 import { mergeMap, delay, map } from 'rxjs/operators';
 
@@ -11,7 +17,6 @@ export class MergeObservableComponent implements OnInit, OnDestroy {
   clickedLocations: Array<string> = [];
   mergeSubscription: Subscription | undefined;
 
-  @ViewChild('clickMerge1') clickMerge1: ElementRef | undefined;
   constructor() {}
 
   ngOnInit() {}
@@ -21,7 +26,7 @@ export class MergeObservableComponent implements OnInit, OnDestroy {
       .pipe(
         mergeMap(e =>
           of(1, 2).pipe(
-            delay(500),
+            delay(5000),
             map(num => e + num)
           )
         )
@@ -29,7 +34,7 @@ export class MergeObservableComponent implements OnInit, OnDestroy {
       .subscribe(item => this.clickedLocations.push(item));
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.mergeSubscription.unsubscribe();
   }
 }
