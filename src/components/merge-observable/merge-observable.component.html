@@ -1,0 +1,8 @@
+<div #clickMerge1>click 1</div>
+<div #clickMerge2>click 2</div>
+<ng-container *ngFor="let item of clickedLocations">
+  <div class="click-item">
+    <div>merge 1: </div>
+    <div>{{item}}</div>
+  </div>
+</ng-container>
