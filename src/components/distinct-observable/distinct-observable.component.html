@@ -1,1 +1,9 @@
-<div class="scroll-wrapper">scroll</div>
+<div class="scroll-wrapper">
+<div class="scroll-btn">
+    <div>scroll</div>
+    <div (click)="cleanScroll()">reset</div>
+</div>
+<ng-container *ngFor="let  item of scrollPos">
+<div>{{item}}</div>
+</ng-container>
+</div>

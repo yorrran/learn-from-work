@@ -9,14 +9,20 @@ import { throttleTime } from 'rxjs/operators';
 })
 export class DistinctObservableComponent implements OnInit, OnDestroy {
   scrollSubscription: Subscription | undefined;
+  scrollPos: Array<number>=[];
   constructor() {}
 
   ngOnInit() {
     this.scrollSubscription = fromEvent<any>(window, 'scroll')
       .pipe(throttleTime(100))
       .subscribe(item => {
-        console.log('item:', item);
+        const scrollNum = (document as any).documentElement.scrollTop;
+        this.scrollPos.push(scrollNum);
       });
+  }
+
+  cleanScroll(){
+    this.scrollPos = [];
   }
 
   ngOnDestroy() {
