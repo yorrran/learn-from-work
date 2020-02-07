@@ -9,3 +9,5 @@ serve  with port: 8081
 3. merge inner observal to emit to outer observable
 
 4. distinct and throttle observal with example of scroll event
+
+5. use canvas for displaying graph
