@@ -1,0 +1,4 @@
+<div (click)="handleAdd()">add</div>
+<ng-container>
+  <app-item *ngFor = "let item of elementArr; trackBy: uniqueItem" [id]="item"></app-item>
+</ng-container>
