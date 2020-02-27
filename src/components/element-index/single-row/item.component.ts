@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-item',
@@ -10,13 +10,11 @@ export class ItemComponent implements OnInit {
   
   @Input() set id(id:  {key: number, value:number}){
     console.log("id:", id)
-    this.itemNum  = {...id};
+    this.itemNum  = id ;
   }
   constructor() { }
 
   ngOnInit() {
   }
-
-  ngDo
 
 }

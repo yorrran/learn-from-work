@@ -12,9 +12,10 @@ import { DistinctObservableComponent } from '../components/distinct-observable/d
 import { CanvasDrawComponent } from '../components/canvas-draw/canvas-draw.component';
 import { ElementIndexComponent } from '../components/element-index/element-index.component';
 import { ItemComponent } from 'src/components/element-index/single-row/item.component';
+import { WebsocketObservableComponent } from 'src/components/websocket-observable/websocket-observable.component';
 
 @NgModule({
-  declarations: [AppComponent, PollingComponent, DebounceObservableComponent, MergeObservableComponent, DistinctObservableComponent, CanvasDrawComponent, ElementIndexComponent, ItemComponent],
+  declarations: [AppComponent, PollingComponent, DebounceObservableComponent, MergeObservableComponent, DistinctObservableComponent, CanvasDrawComponent, ElementIndexComponent, ItemComponent, WebsocketObservableComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
