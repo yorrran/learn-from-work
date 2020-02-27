@@ -11,3 +11,7 @@ serve  with port: 8081
 4. distinct and throttle observal with example of scroll event
 
 5. use canvas for displaying graph
+
+6. render only changed field with trackby
+
+7. websocket observable, start local server with spring boot https://github.com/yorrran/spring-boot-websocket
